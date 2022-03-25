@@ -1,0 +1,19 @@
+var dados;
+
+function editar(idPost){
+    let value = {
+        'id': idPost
+    }
+    dados = JSON.stringify(value);
+    $.ajax({
+        url: 'index.php?pagina=postagem&id='+idPost,
+        type: 'POST',
+        data: {data: dados},
+        success: function(result){
+            // Retorno se tudo ocorreu normalmente
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Retorno caso algum erro ocorra
+        }
+    });
+}

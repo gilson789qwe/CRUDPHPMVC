@@ -1,0 +1,18 @@
+<section>
+    <h1>Postagens:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{parameter['url']}}index.php?pagina=create&metodo=create">Nova Postagem</a> </h1>
+    {% if postagens == false %}
+        <p>Nenhum postagem foi criada</p>
+    {% else %}
+        {% for postagem in postagens %}
+        <article>
+            <header>
+                <h2><a href="{{parameter['url']}}index.php?pagina=post&id={{postagem.id}}">Assunto: {{postagem.assunto}}</a></h2>
+            </header>
+            <p>Descrição: {{postagem.descricao}}  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <a href="{{parameter['url']}}index.php?pagina=create&metodo=edit&id={{postagem.id}}">Editar</a>
+                <a href="{{parameter['url']}}index.php?pagina=create&metodo=delete&id={{postagem.id}}">Excluir</a></p>
+            <p>Data de entrega: {{postagem.data}}</p>
+        </article>
+        {% endfor %}
+    {% endif %}
+</section>

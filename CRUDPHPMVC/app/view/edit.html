@@ -1,0 +1,14 @@
+<h1>Editar Publicação</h1>
+
+<form method="post" action="?pagina=create&metodo=update&id={{id}}">
+    <span>Assunto</span><br>
+    <input type="text" name="assunto" value="{{assunto}}"><br>
+
+    <span>Data</span><br>
+    <input type="date" name="data" value="{{data}}"><br>
+
+    <span>Descrição</span><br>
+    <textarea cols="25" rows="5" name="descricao">{{descricao}}</textarea><br><br>
+
+    <input type="submit" value="Atualizar">
+</form>
